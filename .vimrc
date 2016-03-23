@@ -49,6 +49,7 @@ set si				"Smart indent
 set wrap
 set breakindent
 set backspace=indent,eol,start "Allow backspacing over everything in insert mode
+set mouse=a
 
 " Key mapping
 let mapleader=","
@@ -71,17 +72,18 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 inoremap jk <ESC>
 inoremap kj <ESC>
+nmap <leader>/ T><space>gc$
 nmap <leader>n :NERDTree<cr>
-nnoremap <leader>1 :1b<CR>
-nnoremap <leader>2 :2b<CR>
-nnoremap <leader>3 :3b<CR>
-nnoremap <leader>4 :4b<CR>
-nnoremap <leader>5 :5b<CR>
-nnoremap <leader>6 :6b<CR>
-nnoremap <leader>7 :7b<CR>
-nnoremap <leader>8 :8b<CR>
-nnoremap <leader>9 :9b<CR>
-nnoremap <leader>10 :10b<CR>
+nnoremap <leader>1 :b1<CR>
+nnoremap <leader>2 :b2<CR>
+nnoremap <leader>3 :b3<CR>
+nnoremap <leader>4 :b4<CR>
+nnoremap <leader>5 :b5<CR>
+nnoremap <leader>6 :b6<CR>
+nnoremap <leader>7 :b7<CR>
+nnoremap <leader>8 :b8<CR>
+nnoremap <leader>9 :b9<CR>
+nnoremap <leader>10 :b10<CR>
 
 silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
 
