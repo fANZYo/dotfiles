@@ -1,0 +1,29 @@
+Index: css/styles.pref.css
+===================================================================
+--- css/styles.pref.css
++++ css/styles.pref.css
+@@ -63,10 +63,10 @@
+ }
+ 
+ .wrapper {
+ 	width: 90%;
++	max-width: 800px;
++	margin: auto
+-	max-width: 800px
+-	margin: auto;
+ }
+ 
+ .service {
+ 	background: #f9f9f9;
+@@ -181,9 +181,10 @@
+ 	font-family: 'OpenSans', Arial, Helvetica;
+ 	font-size: .875em;
+ 	padding: .5em 1em;
+ 	text-shadow: 0 0 1px rgba(0, 0, 0, .4);
++	-webkit-transition: .15s ease-in-out;
++	        transition: .15s ease-in-out;
+-	transition: .15s ease-in-out;
+ }
+ 
+ .btn:hover,
+ .btn:focus,

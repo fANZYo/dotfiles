@@ -1,0 +1,33 @@
+
+@media screen and (min-width: 940px){
+	.service {
+		display: inline-block;
+		margin: .25em 1% .25em 0;
+		width: 49.5%;
+	}
+
+	.service:nth-child(even) {
+		margin-right: 0;
+	}
+}
+
+@media screen and (min-width: 1500px){
+	body {
+		background: url(../img/backgroundXL.jpg);
+	}
+}
+
+@media screen and (max-width: 495px){
+	.request {
+		text-align: center;
+	}
+
+	.request p, .request .btn {
+		float: none;
+		top: inherit;
+	}
+
+	.request p {
+		margin-bottom: 1em;
+	}
+}
