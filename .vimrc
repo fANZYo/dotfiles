@@ -1,19 +1,36 @@
+set nocompatible
+
 execute pathogen#infect()
 
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " Theme Settings
-set nocompatible
-set t_Co=16
+set t_Co=256
+" set termguicolors
 syntax on
 set background=dark
-let g:solarized_visibility = "low"
-colorscheme solarized
+" let g:solarized_visibility = "low"
+colorscheme monokai2
+let g:monokai_term_italic = 1
+let g:monokai_gui_italic = 1
+
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 1
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_theme = 'powerlineish'
 
+let g:ctrlp_map = '<c-p>'
+" let g:ctrlp_cmd = 'CrtlP'
+nmap <C-p> :CtrlP<CR>
+let g:ctrlp_working_path_mode = '0'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+
 filetype plugin indent on
+
+au FocusLost * :wa "auto save on focus loss
 
 set fileformat=unix
 set encoding=utf-8
@@ -39,7 +56,7 @@ set splitright
 set list
 set lcs=tab:▸\ ,eol:¬
 
-set timeoutlen=200 ttimeoutlen=0
+set timeoutlen=333 ttimeoutlen=0
 
 " Tabulation Settings
 set smarttab
@@ -56,16 +73,6 @@ let mapleader=","
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nnoremap ; :
-nnoremap j gj
-nnoremap k gk
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-nnoremap hh <NOP>
-nnoremap jj <NOP>
-nnoremap kk <NOP>
-nnoremap ll <NOP>
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
@@ -73,7 +80,7 @@ map <C-l> <C-w>l
 inoremap jk <ESC>
 inoremap kj <ESC>
 nmap <leader>/ T><space>gc$
-nmap <leader>n :NERDTree<cr>
+nmap <leader>n :NERDTree<CR>
 nnoremap <leader>1 :b1<CR>
 nnoremap <leader>2 :b2<CR>
 nnoremap <leader>3 :b3<CR>
@@ -85,6 +92,9 @@ nnoremap <leader>8 :b8<CR>
 nnoremap <leader>9 :b9<CR>
 nnoremap <leader>10 :b10<CR>
 
+"Clear search hl
+nnoremap <CR> :noh<CR>
+
 silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
 
 " Google Search
@@ -94,4 +104,4 @@ function! Google()
 	call inputrestore()
 	return searchterm
 endfunction
-map <leader>g <ESC>:!/usr/bin/google-chrome-stable 'http://www.google.com/search?q=<C-R>=Google()<CR>'<CR><CR>
+map <leader>g <ESC>:!/usr/bin/firefox 'http://www.google.com/search?q=<C-R>=Google()<CR>'<CR><CR>
