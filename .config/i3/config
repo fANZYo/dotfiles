@@ -34,7 +34,7 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:System San Francisco Display 10
+font pango:System San Francisco Display 8
 hide_edge_borders both
 new_window none
 
@@ -49,7 +49,7 @@ new_window none
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -111,7 +111,7 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $workspace1 "1: "
+set $workspace1 "1: "
 set $workspace2 "2: "
 set $workspace10 "10: "
 
@@ -189,7 +189,7 @@ client.urgent             $urgent-bg-color   $urgent-bg-color   $text-color     
 bar {
 	status_command i3blocks -c ~/i3blocks.conf
 		tray_output primary
-		font pango: System San Francisco Display, FontAwesome 11
+		font pango: System San Francisco Display, FontAwesome 10
 		position bottom
 		colors {
 			separator #757575
