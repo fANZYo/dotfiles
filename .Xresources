@@ -238,7 +238,7 @@ URxvt*scrollBar: false
 ! Compile frills: Associate action with keysym sym. The intervening
 ! URxvt*keysym.sym: action
 
-! URxvt*perl-ext-common: string
+URxvt*perl-ext-common: default,matcher
 
 ! Comma-separated list(s) of perl extension scripts (default:
 ! URxvt*perl-ext: string
@@ -259,7 +259,8 @@ URxvt*scrollBar: false
 ! URxvt*searchable-scrollback: keysym *DEPRECATED*
 
 ! Specifies the program to be started with a URL argument. Used by
-! URxvt*url-launcher: string
+URxvt*url-launcher: /usr/bin/google-chrome-stable
+URxvt*matcher.button: 1
 
 ! Compile frills: Sets the WM_TRANSIENT_FOR property to the given
 ! URxvt*transient-for: windowid
