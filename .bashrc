@@ -8,7 +8,7 @@
 # source ~/.bash-git-prompt/gitprompt.sh
 GIT_PROMPT_ONLY_IN_REPO=1
 
-alias ls='ls -hF --color=auto'
+alias ls='ls -hp --color=auto --group-directories-first'
 alias ll='ls -l'
 alias la='ls -A'
 alias tm='tmux'

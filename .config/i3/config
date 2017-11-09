@@ -148,8 +148,10 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-assign [class="google-chrome"] $workspace1
+assign [class="Google-chrome"] $workspace1
 assign [class="Spotify"] $workspace10
+for_window [class="Google-chrome"] move to workspace $workspace1
+for_window [class="Spotify"] move to workspace $workspace10
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

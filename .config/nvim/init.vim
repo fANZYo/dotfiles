@@ -28,6 +28,22 @@ nmap <C-p> :CtrlP<CR>
 let g:ctrlp_working_path_mode = '0'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let b:syntastic_checkers = ['eslint']
+if executable('node_modules/.bin/eslint')
+  let b:syntastic_javascript_eslint_exec = 'eslint_d'
+endif
+hi spellBad none
+hi spellCap none
+
+let g:jsx_ext_required = 0
+
 filetype plugin indent on
 
 au FocusLost * :wa "auto save on focus loss
@@ -60,7 +76,7 @@ set timeoutlen=333 ttimeoutlen=0
 
 " Tabulation Settings
 set smarttab
-set shiftwidth=3 tabstop=3 softtabstop=3 noexpandtab
+set shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 set ai				"Auto indent
 set si				"Smart indent
 set wrap
@@ -68,11 +84,15 @@ set breakindent
 set backspace=indent,eol,start "Allow backspacing over everything in insert mode
 set mouse=a
 
+set autoread
+
 " Key mapping
 let mapleader=","
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nnoremap ; :
+map <leader>s :%s//gI<left><left><left>
+map <leader>S :%s/<C-r><C-w>//gI<Left><Left><Left>
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
@@ -80,6 +100,7 @@ map <C-l> <C-w>l
 inoremap jk <ESC>
 inoremap kj <ESC>
 nmap <leader>/ T><space>gc$
+nmap <leader>; A;
 nmap <leader>n :NERDTree<CR>
 nnoremap <leader>1 :b1<CR>
 nnoremap <leader>2 :b2<CR>
