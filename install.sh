@@ -1,5 +1,5 @@
 pacman -Syu
-pacman -S neovim tmux git nodejs yaourt arc-gtk-theme
+pacman -S termite neovim tmux git nodejs yaourt arc-gtk-theme
 
 cp .bashrc .fehbg .gitconfig .gtkrc-2.0 i3blocks.conf install.sh .tmux.conf .xinitrc .Xresources ~/
 
