@@ -17,6 +17,7 @@ git clone https://github.com/tomtom/tcomment_vim.git
 git clone https://github.com/tomtom/tlib_vim.git
 git clone https://github.com/vim-airline/vim-airline.git
 git clone https://github.com/vim-airline/vim-airline-themes.git
+git clone https://github.com/tpope/vim-fugitive.git
 git clone https://github.com/pangloss/vim-javascript.git
 git clone https://github.com/mxw/vim-jsx.git
 git clone https://github.com/tpope/vim-repeat.git
