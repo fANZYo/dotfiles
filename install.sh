@@ -6,6 +6,7 @@ chsh -s $(which zsh)
 rm ~/.gitconfig
 rm ~/.config/termite/config
 rm ~/.tmux.conf
+rm ~/.local/share/tmux/theme.sh
 rm ~/.vimrc
 rm ~/.zshrc
 rm ~/.bashrc
@@ -47,6 +48,7 @@ ln ./gitconfig                    ~/.gitconfig
 mkdir -p ~/.config/termite
 ln ./config/termite/config        ~/.config/termite/config
 ln ./tmux.conf                    ~/.tmux.conf
+ln ./local/share/tmux/theme.sh    ~/.local/share/tmux/theme.sh
 ln ./config/nvim/init.vim         ~/.config/nvim/init.vim
 ln ./zshrc                        ~/.zshrc
 ln ./bashrc                       ~/.bashrc
