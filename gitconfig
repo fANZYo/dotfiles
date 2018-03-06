@@ -5,3 +5,10 @@
 	helper = cache
 [alias]
 	graph = log --graph --oneline --decorate
+[color]
+  # branch = magenta
+  untracked = cyan
+  unmerged = yellow
+  header = bold black
+[push]
+	default = current

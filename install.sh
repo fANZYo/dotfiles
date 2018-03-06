@@ -1,7 +1,24 @@
 pacman -Syu
 pacman -S termite neovim tmux git nodejs yaourt arc-gtk-theme
 
-cp .bashrc .fehbg .gitconfig .gtkrc-2.0 i3blocks.conf install.sh .tmux.conf .xinitrc .Xresources ~/
+# Remove old dot files
+rm ~/.gitconfig
+rm ~/.tmux.conf
+rm ~/.vimrc
+rm ~/.zshrc
+rm ~/.bashrc
+rm ~/.gtkrc-2.0
+rm ~/.Xresources
+
+# Link new dot files
+ln ~/git/dotfiles/gitconfig                    ~/.gitconfig
+ln ~/git/dotfiles/tmux.conf                    ~/.tmux.conf
+ln ~/git/dotfiles/config/nvim/init.vim         ~/.config/nvim/init.vim
+ln ~/git/dotfiles/zshrc                        ~/.zshrc
+ln ~/git/dotfiles/bashrc                       ~/.bashrc
+ln ~/git/dotfiles/gtkrc-2.0                    ~/.gtkrc-2.0
+ln ~/git/dotfiles/Xressource                   ~/.Xresources
+ln ~/git/dotfiles/xinitrc                      ~/.xinitrc
 
 # Vim plugins
 mkdir .config/nvim/bundle
