@@ -1,18 +1,22 @@
-pacman -Syu
-pacman -S termite neovim tmux git nodejs yaourt arc-gtk-theme
+sudo pacman -Syu
+sudo pacman -S termite neovim tmux git nodejs yaourt arc-gtk-theme zsh-theme-powerlevel9k gmrun
+chsh -s $(which zsh)
 
 # Remove old dot files
-rm /home/fanzy/.gitconfig
-rm /home/fanzy/.tmux.conf
-rm /home/fanzy/.vimrc
-rm /home/fanzy/.zshrc
-rm /home/fanzy/.bashrc
-rm /home/fanzy/.gtkrc-2.0
-rm /home/fanzy/.Xresources
+rm ~/.gitconfig
+rm ~/.config/termite/config
+rm ~/.tmux.conf
+rm ~/.vimrc
+rm ~/.zshrc
+rm ~/.bashrc
+rm ~/.gtkrc-2.0
+rm ~/.Xresources
+rm ~/.Xmodmap
 
 # Vim plugins
-mkdir -p /home/fanzy/.config/nvim/bundle
-cd /home/fanzy/.config/nvim/bundle
+mkdir -p ~/.config/nvim/bundle ~/.config/nvim/autoload
+curl -LSso ~/.config/nvim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+cd ~/.config/nvim/bundle
 git clone https://github.com/jiangmiao/auto-pairs.git
 git clone https://github.com/ctrlpvim/ctrlp.vim.git
 git clone https://github.com/scrooloose/nerdtree.git
@@ -28,20 +32,29 @@ git clone https://github.com/tpope/vim-fugitive.git
 git clone https://github.com/pangloss/vim-javascript.git
 git clone https://github.com/mxw/vim-jsx.git
 git clone https://github.com/tpope/vim-repeat.git
+git clone https://github.com/tomtom/tlib_vim.git
+git clone https://github.com/MarcWeber/vim-addon-mw-utils.git
 git clone https://github.com/garbas/vim-snipmate.git
 git clone https://github.com/tpope/vim-surround.git
 git clone https://github.com/christoomey/vim-tmux-navigator.git
 
+# Vim colors
+mkdir -p ~/.config/nvim/colors
+ln ./config/nvim/colors/monokai2.vim        ~/.config/nvim/colors/monokai2.vim
+
 # Link new dot files
-ln /home/fanzy/git/dotfiles/gitconfig                    /home/fanzy/.gitconfig
-ln /home/fanzy/git/dotfiles/tmux.conf                    /home/fanzy/.tmux.conf
-ln /home/fanzy/git/dotfiles/config/nvim/init.vim         /home/fanzy/.config/nvim/init.vim
-ln /home/fanzy/git/dotfiles/zshrc                        /home/fanzy/.zshrc
-ln /home/fanzy/git/dotfiles/bashrc                       /home/fanzy/.bashrc
-ln /home/fanzy/git/dotfiles/gtkrc-2.0                    /home/fanzy/.gtkrc-2.0
-ln /home/fanzy/git/dotfiles/Xressource                   /home/fanzy/.Xresources
-ln /home/fanzy/git/dotfiles/xinitrc                      /home/fanzy/.xinitrc
+ln ./gitconfig                    ~/.gitconfig
+mkdir -p ~/.config/termite
+ln ./config/termite/config        ~/.config/termite/config
+ln ./tmux.conf                    ~/.tmux.conf
+ln ./config/nvim/init.vim         ~/.config/nvim/init.vim
+ln ./zshrc                        ~/.zshrc
+ln ./bashrc                       ~/.bashrc
+ln ./gtkrc-2.0                    ~/.gtkrc-2.0
+ln ./Xressource                   ~/.Xresources
+ln ./Xmodmap                      ~/.Xmodmap
+ln ./xinitrc                      ~/.xinitrc
 
 # Fonts
-pacman -S ttf-dejavu
+sudo pacman -S ttf-dejavu
 yaourt ttf-monaco ttf-opensans system-san-francisco-git

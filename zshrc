@@ -24,7 +24,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 ### Theme
 POWERLEVEL9K_MODE='awesome-fontconfig'
 
-source  ~/powerlevel9k/powerlevel9k.zsh-theme
+source  /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
 
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
