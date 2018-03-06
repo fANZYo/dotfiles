@@ -2,27 +2,17 @@ pacman -Syu
 pacman -S termite neovim tmux git nodejs yaourt arc-gtk-theme
 
 # Remove old dot files
-rm ~/.gitconfig
-rm ~/.tmux.conf
-rm ~/.vimrc
-rm ~/.zshrc
-rm ~/.bashrc
-rm ~/.gtkrc-2.0
-rm ~/.Xresources
-
-# Link new dot files
-ln ~/git/dotfiles/gitconfig                    ~/.gitconfig
-ln ~/git/dotfiles/tmux.conf                    ~/.tmux.conf
-ln ~/git/dotfiles/config/nvim/init.vim         ~/.config/nvim/init.vim
-ln ~/git/dotfiles/zshrc                        ~/.zshrc
-ln ~/git/dotfiles/bashrc                       ~/.bashrc
-ln ~/git/dotfiles/gtkrc-2.0                    ~/.gtkrc-2.0
-ln ~/git/dotfiles/Xressource                   ~/.Xresources
-ln ~/git/dotfiles/xinitrc                      ~/.xinitrc
+rm /home/fanzy/.gitconfig
+rm /home/fanzy/.tmux.conf
+rm /home/fanzy/.vimrc
+rm /home/fanzy/.zshrc
+rm /home/fanzy/.bashrc
+rm /home/fanzy/.gtkrc-2.0
+rm /home/fanzy/.Xresources
 
 # Vim plugins
-mkdir .config/nvim/bundle
-cd .config/nvim/bundle
+mkdir -p /home/fanzy/.config/nvim/bundle
+cd /home/fanzy/.config/nvim/bundle
 git clone https://github.com/jiangmiao/auto-pairs.git
 git clone https://github.com/ctrlpvim/ctrlp.vim.git
 git clone https://github.com/scrooloose/nerdtree.git
@@ -41,6 +31,16 @@ git clone https://github.com/tpope/vim-repeat.git
 git clone https://github.com/garbas/vim-snipmate.git
 git clone https://github.com/tpope/vim-surround.git
 git clone https://github.com/christoomey/vim-tmux-navigator.git
+
+# Link new dot files
+ln /home/fanzy/git/dotfiles/gitconfig                    /home/fanzy/.gitconfig
+ln /home/fanzy/git/dotfiles/tmux.conf                    /home/fanzy/.tmux.conf
+ln /home/fanzy/git/dotfiles/config/nvim/init.vim         /home/fanzy/.config/nvim/init.vim
+ln /home/fanzy/git/dotfiles/zshrc                        /home/fanzy/.zshrc
+ln /home/fanzy/git/dotfiles/bashrc                       /home/fanzy/.bashrc
+ln /home/fanzy/git/dotfiles/gtkrc-2.0                    /home/fanzy/.gtkrc-2.0
+ln /home/fanzy/git/dotfiles/Xressource                   /home/fanzy/.Xresources
+ln /home/fanzy/git/dotfiles/xinitrc                      /home/fanzy/.xinitrc
 
 # Fonts
 pacman -S ttf-dejavu
