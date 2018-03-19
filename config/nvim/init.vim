@@ -37,7 +37,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let b:syntastic_checkers = ['eslint']
 if executable('node_modules/.bin/eslint')
-  let b:syntastic_javascript_eslint_exec = 'eslint_d'
+	let b:syntastic_javascript_eslint_exec = 'eslint_d'
 endif
 hi spellBad none
 hi spellCap none
@@ -60,7 +60,7 @@ set showmatch
 
 set ignorecase		"Ignore case when searching
 set smartcase		"Ignore case if search pattern is all lowercase
-						"	case-sensitive otherwise
+"	case-sensitive otherwise
 set hlsearch		"Highlight search terms
 set incsearch		"Show search matches as you type
 
@@ -70,13 +70,13 @@ set splitbelow
 set splitright
 
 set list
-set lcs=tab:▸\ ,eol:¬
+set lcs=tab:│\ ,eol:¬
 
 set timeoutlen=333 ttimeoutlen=0
 
 " Tabulation Settings
 set smarttab
-set shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+set shiftwidth=3 tabstop=3 softtabstop=3 noexpandtab
 set ai				"Auto indent
 set si				"Smart indent
 set wrap
@@ -85,6 +85,7 @@ set backspace=indent,eol,start "Allow backspacing over everything in insert mode
 set mouse=a
 
 set autoread
+au CursorHold * checktime
 
 " Key mapping
 let mapleader=","
@@ -125,4 +126,4 @@ function! Google()
 	call inputrestore()
 	return searchterm
 endfunction
-map <leader>g <ESC>:!/usr/bin/firefox 'http://www.google.com/search?q=<C-R>=Google()<CR>'<CR><CR>
+map <leader>g <ESC>:!/usr/bin/google-chrome-stable 'http://www.google.com/search?q=<C-R>=Google()<CR>'<CR><CR>
