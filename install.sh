@@ -1,7 +1,8 @@
 BASEDIR=$(pwd)
+BASE_AUR="https://aur.archlinux.org/cgit/aur.git/snapshot"
 
 sudo pacman -Syu
-sudo pacman -S termite neovim tmux git nodejs npm yaourt arc-gtk-theme zsh-theme-powerlevel9k gmrun ruby i3blocks
+sudo pacman -S termite neovim tmux git nodejs npm yaourt arc-gtk-theme zsh-theme-powerlevel9k gmrun ruby i3blocks openssh i3-wm i3lock i3status pcmanfm
 chsh -s $(which zsh)
 
 # Vim plugins
@@ -32,6 +33,7 @@ git clone https://github.com/christoomey/vim-tmux-navigator.git
 # Remove old dot files
 rm ~/.gitconfig
 rm ~/.config/termite/config
+rm ~/.config/i3/config
 rm ~/.tmux.conf
 rm ~/.local/share/tmux/theme.sh
 rm ~/.vimrc
@@ -64,10 +66,22 @@ ln $BASEDIR/i3blocks.conf                ~/i3blocks.conf
 ln $BASEDIR/config/i3/config             ~/.config/i3/config
 
 # Fonts
-sudo pacman -S ttf-dejavu
-yaourt ttf-monaco
-yaourt ttf-opensans
-yaourt system-san-francisco-font-git
+sudo pacman -S ttf-dejavu ttf-font-awesome
+
+curl -L -O "$BASE_AUR/google-chrome.tar.gz"
+curl -L -O "$BASE_AUR/system-san-francisco-font-git.tar.gz"
+curl -L -O "$BASE_AUR/ttf-monaco.tar.gz"
+curl -L -O "$BASE_AUR/ttf-opensans.tar.gz"
+
+tar -xvf google-chrome.tar.gz
+tar -xvf system-san-francisco-font-git.tar.gz
+tar -xvf ttf-monaco.tar.gz
+tar -xvf ttf-opensans.tar.gz
+
+cd google-chrome && makepkg -si
+cd ../system-san-francisco-font-git && makepkg -si
+cd ../ttf-monaco && makepkg -si
+cd ../ttf-opensans && makepkg -si
 
 mkdir -p ~/.config/fontconfig/conf.d
 cp $BASEDIR/config/fontconfig/conf.d/* ~/.config/fontconfig/conf.d
