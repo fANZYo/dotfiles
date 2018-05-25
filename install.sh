@@ -14,7 +14,7 @@ git clone https://github.com/ctrlpvim/ctrlp.vim.git
 git clone https://github.com/scrooloose/nerdtree.git
 git clone https://github.com/othree/javascript-libraries-syntax.vim.git
 git clone https://github.com/rstacruz/sparkup.git
-git clone https://github.com/vim-syntastic/syntastic.git
+git clone https://github.com/w0rp/ale.git
 git clone https://github.com/vim-scripts/tComment.git
 git clone https://github.com/tomtom/tcomment_vim.git
 git clone https://github.com/tomtom/tlib_vim.git

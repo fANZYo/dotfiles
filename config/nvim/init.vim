@@ -28,17 +28,6 @@ nmap <C-p> :CtrlP<CR>
 let g:ctrlp_working_path_mode = '0'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let b:syntastic_checkers = ['eslint']
-if executable('node_modules/.bin/eslint')
-	let b:syntastic_javascript_eslint_exec = 'eslint_d'
-endif
 hi spellBad none
 hi spellCap none
 
@@ -119,11 +108,15 @@ nnoremap <CR> :noh<CR>
 
 silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
 
-" Google Search
-function! Google()
-	call inputsave()
-	let searchterm = input('Google:')
-	call inputrestore()
-	return searchterm
-endfunction
-map <leader>g <ESC>:!/usr/bin/google-chrome-stable 'http://www.google.com/search?q=<C-R>=Google()<CR>'<CR><CR>
+" Ale Linter
+let g:ale_linters = { 'javascript': ['eslint'] }
+let g:ale_sign_column_always = 1
+let g:airline#extensions#ale#enabled = 1
+" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+" nmap <silent> <C-j> <Plug>(ale_next_wrap)
+" let g:ale_lint_on_text_changed = 'never'
+" let g:ale_lint_on_enter = 0
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+let g:ale_open_list = 1
+" let g:ale_keep_list_window_open = 1
