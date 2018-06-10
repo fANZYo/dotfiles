@@ -2,7 +2,7 @@ BASEDIR=$(pwd)
 BASE_AUR="https://aur.archlinux.org/cgit/aur.git/snapshot"
 
 sudo pacman -Syu
-sudo pacman -S termite neovim tmux git nodejs npm arc-gtk-theme zsh-theme-powerlevel9k gmrun ruby i3blocks openssh i3-wm i3lock i3status pcmanfm
+sudo pacman -S termite neovim tmux git nodejs npm arc-gtk-theme zsh-theme-powerlevel9k gmrun ruby i3blocks openssh i3-wm i3lock i3status pcmanfm ack
 chsh -s $(which zsh)
 
 # Vim plugins
