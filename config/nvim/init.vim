@@ -132,7 +132,7 @@ map <leader>S :%s/<C-r><C-w>//gI<Left><Left><Left>
 " Ack mapping
 nnoremap <leader>a :Ack!<space>
 " Ack word under the cursor
-nnoremap <leader>A :Ack!<space><C-r><C-w> --<C-r>=expand("%:e")<CR>
+nnoremap <leader>A :Ack! --<C-r>=expand("%:e")<CR> <C-r><C-w> 
 
 
 "" PLUGINS
