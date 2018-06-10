@@ -129,6 +129,10 @@ map <C-l> <C-w>l
 map <leader>s :%s//gI<left><left><left>
 " Search and replace word under the cursor
 map <leader>S :%s/<C-r><C-w>//gI<Left><Left><Left>
+" Ack mapping
+nnoremap <leader>a :Ack!<space>
+" Ack word under the cursor
+nnoremap <leader>A :Ack!<space><C-r><C-w> --<C-r>=expand("%:e")<CR>
 
 
 "" PLUGINS
