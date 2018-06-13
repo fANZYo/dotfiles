@@ -44,6 +44,9 @@ set nocompatible
 set fileformat=unix
 set encoding=utf-8
 
+" Disable swap files
+set noswapfile
+
 " Display relative line numbers
 set number
 set relativenumber
