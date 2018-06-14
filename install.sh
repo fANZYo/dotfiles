@@ -10,8 +10,8 @@ mkdir -p ~/.config/nvim/bundle ~/.config/nvim/autoload
 curl -LSso ~/.config/nvim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 cd ~/.config/nvim/bundle
 git clone https://github.com/jiangmiao/auto-pairs.git
-git clone https://github.com/ctrlpvim/ctrlp.vim.git
 git clone https://github.com/scrooloose/nerdtree.git
+git clone https://github.com/wincent/command-t.git
 git clone https://github.com/othree/javascript-libraries-syntax.vim.git
 git clone https://github.com/rstacruz/sparkup.git
 git clone https://github.com/w0rp/ale.git
