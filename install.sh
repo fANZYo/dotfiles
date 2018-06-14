@@ -67,7 +67,7 @@ ln $BASEDIR/i3blocks.conf                ~/i3blocks.conf
 ln $BASEDIR/config/i3/config             ~/.config/i3/config
 
 # Fonts
-sudo pacman -S ttf-dejavu ttf-font-awesome
+sudo pacman -S ttf-dejavu awesome-terminal-fonts
 
 curl -L -O "$BASE_AUR/google-chrome.tar.gz"
 curl -L -O "$BASE_AUR/system-san-francisco-font-git.tar.gz"
