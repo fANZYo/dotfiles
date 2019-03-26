@@ -81,6 +81,7 @@ if [ -f %{/usr/lib/bash-git-prompt/gitprompt.sh ]; then
   source /usr/lib/bash-git-prompt/gitprompt.sh
 fi
 
+# ALIAS
 alias ls='ls -hp --color=auto --group-directories-first'
 alias ll='ls -l'
 alias la='ls -A'
@@ -89,6 +90,35 @@ alias ta='tmux attach'
 alias tls='tmux ls'
 alias vim='nvim'
 alias https='http --default-scheme=https'
+alias r='ranger'
+#
+# Git aliases
+#
+alias ga='git add'
+alias gs='git status'
+alias gp='git push'
+alias gc='git commit'
+# git diff
+alias gd='git diff'
+# git checkout
+alias gco='git checkout'
+alias gcob='git checkout -b'
+# git stash
+alias gst='git stash'
+alias gstp='git stash pop'
+
+gpl() {
+	if [ $1 ]
+	then
+		git pull "$1" "$2"
+	else
+		git pull
+	fi
+}
+
+gcam() {
+	git commit -am "$1"
+}
 
 # alsi -n -u
 
@@ -129,3 +159,7 @@ ziprm () {
 # tabtab source for electron-forge package
 # uninstall by removing these lines or running `tabtab uninstall electron-forge`
 [[ -f /home/fanzy/git/ganache/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /home/fanzy/git/ganache/node_modules/tabtab/.completions/electron-forge.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

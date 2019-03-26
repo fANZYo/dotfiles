@@ -136,7 +136,9 @@ map <leader>S :%s/<C-r><C-w>//gI<Left><Left><Left>
 nnoremap <leader>a :Ack!<space>
 " Ack word under the cursor
 nnoremap <leader>A :Ack! --<C-r>=expand("%:e")<CR> <C-r><C-w> 
-
+" Ale mapping
+nmap <silent> <leader>en :ALENext<CR>
+nmap <silent> <leader>ep :ALEPrevious<CR>
 
 "" PLUGINS
 
