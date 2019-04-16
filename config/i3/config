@@ -183,7 +183,7 @@ for_window [title="terminalDropdown"] floating enable
 for_window [title="terminalDropdown"] resize set 1024 576
 for_window [title="terminalDropdown"] move scratchpad
 for_window [title="terminalDropdown"] border pixel 1
-exec --no-startup-id $term -t terminalDropdown -e tmux
+exec --no-startup-id termite -t terminalDropdown -e tmux
 
 bindsym $mod+e [title="rangerDropdown"] scratchpad show; [title="rangerDropdown"] move position center
 
@@ -191,7 +191,7 @@ for_window [title="rangerDropdown"] floating enable
 for_window [title="rangerDropdown"] resize set 1024 576
 for_window [title="rangerDropdown"] move scratchpad
 for_window [title="rangerDropdown"] border pixel 1
-exec --no-startup-id $term -t rangerDropdown -e ranger
+exec --no-startup-id termite -t rangerDropdown -e ranger
 
 bindsym $mod+t [title="TeamCity"] scratchpad show; [title="TeamCity"] move position center
 

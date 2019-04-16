@@ -122,7 +122,7 @@ gcam() {
 
 # alsi -n -u
 
-TERM='xterm-termite'
+TERM='termite'
 COLORTERM='screen-256color'
 
 PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
