@@ -62,6 +62,9 @@ rm ~/.Xresources
 rm ~/.Xmodmap
 rm ~/.xinitrc
 
+# feh background
+ln $BASEDIR/fehbg                                   ~/.fehbg
+
 # Vim colors
 mkdir -p ~/.config/nvim/colors
 ln $BASEDIR/config/nvim/colors/monokai2.vim         ~/.config/nvim/colors/monokai2.vim
@@ -84,6 +87,9 @@ ln $BASEDIR/Xmodmap                                 ~/.Xmodmap
 ln $BASEDIR/xinitrc                                 ~/.xinitrc
 ln $BASEDIR/i3blocks.conf                           ~/i3blocks.conf
 ln $BASEDIR/config/i3/config                        ~/.config/i3/config
+
+# Xorg conf
+sudo cp $BASEDIR/etc/X11/xorg.conf.d/*              /etc/X11/xorg.conf.d/
 
 # Fonts
 cp -r $BASEDIR/local/share/fonts                    ~/.local/share/
