@@ -100,6 +100,16 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# media keys
+bindsym XF86MonBrightnessDown             exec --no-startup-id "xbacklight -dec 10"
+bindsym XF86MonBrightnessUp               exec --no-startup-id "xbacklight -inc 10"
+bindsym XF86AudioLowerVolume              exec --no-startup-id "amixer -q set Master 5%- unmute"
+bindsym XF86AudioRaiseVolume              exec --no-startup-id "amixer -q set Master 5%+ unmute"
+bindsym XF86AudioMute                     exec --no-startup-id "amixer -q set Master toggle"
+bindsym XF86AudioMicMute                  exec --no-startup-id "amixer -q set Capture toggle"
+# bindsym XF86RFKill
+# bindsym XF86Search
+
 set $workspace1 "1: "
 set $workspace2 "2: "
 set $workspace10 "10: "
