@@ -3,6 +3,10 @@ BASE_AUR="https://aur.archlinux.org/cgit/aur.git/snapshot"
 
 sudo pacman -Syu
 
+echo "Installing linux-lts"
+sudo pacman -S linux-lts
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
 echo "Installing Xorg utils"
 sudo pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xbacklight
 
