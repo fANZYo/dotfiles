@@ -2,10 +2,23 @@ BASEDIR=$(pwd)
 BASE_AUR="https://aur.archlinux.org/cgit/aur.git/snapshot"
 
 sudo pacman -Syu
-sudo pacman -S xorg-xinit xorg-server xorg-xrandr ranger acpi alsa-utils termite neovim tmux git nodejs npm arc-gtk-theme zsh-theme-powerlevel9k gmrun ruby i3blocks openssh i3-wm i3lock i3status pcmanfm ack
+
+echo "Installing Xorg utils"
+sudo pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xbacklight
+
+echo "Installing i3 & utils"
+sudo pacman -S i3-wm i3blocks i3lock i3status acpi alsa-utils arc-gtk-theme zsh-theme-powerlevel9k pcmanfm
+
+echo "Installing Dev environment"
+sudo pacman -S termite tmux neovim git nodejs-lts-dubnium npm gmrun openssh ack ruby xsel python-pip
+sudo pip install neovim
+sudo npm i -g neovim
+gem install neovim
+
+echo "Change shell to zsh"
 chsh -s $(which zsh)
 
-# Vim plugins
+echo "Installing Vim plugins"
 mkdir -p ~/.config/nvim/bundle ~/.config/nvim/autoload
 curl -LSso ~/.config/nvim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 cd ~/.config/nvim/bundle
