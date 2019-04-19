@@ -11,7 +11,7 @@ echo "Installing Xorg utils"
 sudo pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xbacklight
 
 echo "Installing i3 & utils"
-sudo pacman -S i3-wm i3blocks i3lock i3status acpi alsa-utils arc-gtk-theme zsh-theme-powerlevel9k pcmanfm
+sudo pacman -S i3-wm i3blocks i3lock i3status acpi alsa-utils playerctl arc-gtk-theme zsh-theme-powerlevel9k pcmanfm
 
 echo "Installing Dev environment"
 sudo pacman -S termite tmux neovim git nodejs-lts-dubnium npm gmrun openssh ack ruby xsel python-pip
