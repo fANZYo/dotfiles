@@ -1,4 +1,5 @@
 LANG="en_US.UTF-8"
+export LESS=-FRX
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
