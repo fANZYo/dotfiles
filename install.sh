@@ -81,6 +81,7 @@ cp $BASEDIR/local/share/wallpaper/blueDropd.jpg     ~/.local/share/wallpaper/blu
 ln $BASEDIR/config/nvim/init.vim                    ~/.config/nvim/init.vim
 ln $BASEDIR/zshrc                                   ~/.zshrc
 ln $BASEDIR/bashrc                                  ~/.bashrc
+ln $BASEDIR/ackrc                                   ~/.ackrc
 ln $BASEDIR/gtkrc-2.0                               ~/.gtkrc-2.0
 ln $BASEDIR/Xresources                              ~/.Xresources
 ln $BASEDIR/Xmodmap                                 ~/.Xmodmap
