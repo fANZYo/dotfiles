@@ -92,6 +92,9 @@ ln $BASEDIR/config/i3/config                        ~/.config/i3/config
 # Xorg conf
 sudo cp $BASEDIR/etc/X11/xorg.conf.d/*              /etc/X11/xorg.conf.d/
 
+# Icons
+cp -r $BASEDIR/local/share/icons                    ~/.local/share/
+
 # Fonts
 cp -r $BASEDIR/local/share/fonts                    ~/.local/share/
 sudo pacman -S ttf-dejavu awesome-terminal-fonts
