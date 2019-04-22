@@ -28,6 +28,10 @@ nmap <C-p> :CtrlP<CR>
 let g:ctrlp_working_path_mode = '0'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
+" Prevent vim auto comment on newline
+set formatoptions-=r
+set formatoptions-=o
+
 hi spellBad none
 hi spellCap none
 
