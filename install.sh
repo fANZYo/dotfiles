@@ -87,6 +87,7 @@ ln $BASEDIR/Xresources                              ~/.Xresources
 ln $BASEDIR/Xmodmap                                 ~/.Xmodmap
 ln $BASEDIR/xinitrc                                 ~/.xinitrc
 ln $BASEDIR/i3blocks.conf                           ~/i3blocks.conf
+mkdir -p ~/.config/i3
 ln $BASEDIR/config/i3/config                        ~/.config/i3/config
 
 # Xorg conf
