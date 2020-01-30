@@ -109,6 +109,20 @@ bindsym $mod+Shift+braceleft              exec --no-startup-id "playerctl previo
 bindsym $mod+Shift+braceright             exec --no-startup-id "playerctl next"
 bindsym $mod+Shift+Return                 exec --no-startup-id "playerctl play-pause"
 
+# util screenshot
+bindsym Print                             exec --no-startup-id "deepin-screenshot"
+
+# util bluetooth
+bindsym $mod+F8                           exec --no-startup-id "bluetoothctl power on"
+
+# util headphone
+bindsym $mod+backslash                    exec --no-startup-id "pacmd set-card-profile bluez_card.4C_87_5D_0A_FD_59 a2dp_sink"
+bindsym $mod+Shift+backslash              exec --no-startup-id "pacmd set-card-profile bluez_card.4C_87_5D_0A_FD_59 headset_head_unit"
+
+# util screen
+bindsym $mod+grave                        exec --no-startup-id "xrandr --output HDMI1 --off --output DP1 --off --output eDP1 --primary"
+bindsym $mod+Shift+grave                  exec --no-startup-id "xrandr --output HDMI1 --auto --primary --output DP1 --auto --right-of HDMI1"
+
 set $workspace1 "1: "
 set $workspace2 "2: "
 set $workspace10 "10: "
@@ -138,7 +152,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # i3lock
-bindsym $mod+shift+x exec i3lock --color "$bg-color" -f -e
+bindsym $mod+shift+x exec i3lock --color "$bg-color" -f -e && playerctl play-pause
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -147,9 +161,15 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 assign [class="Google-chrome"] $workspace1
+assign [class="Dev"] $workspace2
 assign [class="Spotify"] $workspace10
 for_window [class="Google-chrome"] move to workspace $workspace1
+for_window [class="Dev"] move to workspace $workspace2
 for_window [class="Spotify"] move to workspace $workspace10
+
+workspace $workspace1 output HDMI1
+workspace $workspace2 output DP1
+workspace $workspace10 output DP1
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -183,8 +203,6 @@ client.focused            $bg-color          $bg-color          $text-color     
 client.focused_inactive   $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
 client.unfocused          $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
 client.urgent             $urgent-bg-color   $urgent-bg-color   $text-color          #00ff00
-
-exec xrandr --output HDMI1 --auto --primary --output HDMI2 --auto --right-of HDMI1
 
 bindsym $mod+u [title="terminalDropdown"] scratchpad show; [title="terminalDropdown"] move position center
 

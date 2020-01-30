@@ -68,6 +68,9 @@ set timeoutlen=333 ttimeoutlen=0
 set autoread
 au BufWinEnter * checktime
 
+" Handle multiple syntax
+au FileType vue syntax sync fromstart
+
 " Display status line
 set laststatus=2
 
@@ -127,6 +130,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nnoremap <CR> :noh<CR>
 " NERDTree mapping
 nmap <leader>n :NERDTree<CR>
+nmap <leader>f :NERDTreeFocus<CR>
 " Tmux in vim
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -139,7 +143,7 @@ map <leader>S :%s/<C-r><C-w>//gI<Left><Left><Left>
 " Ack mapping
 nnoremap <leader>a :Ack!<space>
 " Ack word under the cursor
-nnoremap <leader>A :Ack! --<C-r>=expand("%:e")<CR> <C-r><C-w> 
+nnoremap <leader>A :Ack! <C-r><C-w> 
 " Ale mapping
 nmap <silent> <leader>en :ALENext<CR>
 nmap <silent> <leader>ep :ALEPrevious<CR>
@@ -155,5 +159,16 @@ let g:ale_open_list = 0
 
 " CommandT
 let g:CommandTTraverseSCM = "pwd"
-let g:CommandTIgnoreCase = 0
+let g:CommandTSmartCase = 1
 let g:CommandTWildIgnore = &wildignore . ",*/node_modules"
+
+" NERDTress File highlighting
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+	exec 'autocmd filetype nerdtree highlight '.a:extension.' ctermbg='.a:bg.' ctermfg='.a:fg.' guibg='.a:guibg.' guifg='.a:guifg
+	exec 'autocmd filetype nerdtree syn match '.a:extension.' #^\s\+.*'.a:extension.'$#'
+endfunction
+
+call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('scss', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('js', 'yellow', 'none', '#ffa500', '#151515')
+call NERDTreeHighlightFile('vue', 'darkcyan', 'none', '#ffa500', '#151515')

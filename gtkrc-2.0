@@ -3,6 +3,7 @@
 
 include "/home/fanzy/.gtkrc-2.0.mine"
 gtk-theme-name="Arc-Darker"
+gtk-application-prefer-dark-theme="true"
 gtk-icon-theme-name="AwOkenDark"
 gtk-font-name="Sans 11"
 gtk-cursor-theme-name="Adwaita"

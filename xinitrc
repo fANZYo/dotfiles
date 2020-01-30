@@ -35,5 +35,7 @@ fi
 xset s off -b -dpms &
 sh ~/.fehbg &
 pcmanfm -d &
+setxkbmap -option compose:ralt
+xmodmap ~/.Xmodmap
 exec i3
 
